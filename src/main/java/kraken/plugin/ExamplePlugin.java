@@ -51,7 +51,7 @@ public class ExamplePlugin extends AbstractPlugin {
         if (type == Widget.TEXT) {
             String text = w.getText();
             if (text != null) {
-                ImGui.label("  -> " + text);
+                ImGui.label("   -> " + text);
             }
         } else if (type == Widget.CONTAINER) {
             Widget[] children = w.getChildren();
@@ -146,6 +146,7 @@ public class ExamplePlugin extends AbstractPlugin {
             Widget[] widgets = bankWidget.getWidgets();
             for (Widget w : widgets) {
                 ImGui.label("  -> Type= " + w.getType());
+                ImGui.label("  -> Bounds= " + w.getPosition() + " " + w.getSize());
                 printWidgetText(w);
             }
         }
@@ -161,6 +162,14 @@ public class ExamplePlugin extends AbstractPlugin {
         ImGui.freeText("Free Text", new Vector2i(15, 15), 0xff0000ff);
         ImGui.freeLine(new Vector2i(15, 15), new Vector2i(45, 45), 0xff0000ff);
         ImGui.freePoly4(new Vector2i(150, 150), new Vector2i(158, 167), new Vector2i(132, 154), new Vector2i(128, 128), 0xff0000ff);
+
+        Players.closest((p) -> {
+            Vector2i mm = Client.worldToMinimap(p.getScenePosition());
+            if (mm != null) {
+                ImGui.freeText(p.getName(), mm, 0xff0000ff);
+            }
+            return false;
+        });
     }
 
     @Override
