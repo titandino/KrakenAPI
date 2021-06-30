@@ -63,6 +63,20 @@ public class Widget {
      */
     public native Item getItem();
 
+    /**
+     * Retrieves the position of this widget on the screen. May not be valid for all widgets.
+     *
+     * @return The position of this widget.
+     */
+    public native Vector2i getPosition();
+
+    /**
+     * Retrieves the size of this widget on the screen. May not be valid for all widgets.
+     *
+     * @return The size of this widget.
+     */
+    public native Vector2i getSize();
+
     @Override
     public String toString() {
         return "Widget{" +
