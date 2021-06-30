@@ -108,6 +108,14 @@ public class Client {
     public static native Vector2i worldToScreen(Vector3 vec);
 
     /**
+     * Projects a world point to the minimap.
+     *
+     * @param vec The world point to project.
+     * @return The projected poinr, or NULL if projection failed.
+     */
+    public static native Vector2i worldToMinimap(Vector3 vec);
+
+    /**
      * Projects multiple world points to the screen.
      *
      * Good for projecting tile points, model points, etc.
