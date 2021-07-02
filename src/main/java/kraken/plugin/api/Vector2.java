@@ -3,7 +3,7 @@ package kraken.plugin.api;
 import java.util.Objects;
 
 /**
- * A vector3.
+ * A vector2.
  */
 public class Vector2 {
 
@@ -40,7 +40,7 @@ public class Vector2 {
 
     @Override
     public String toString() {
-        return "Vector3{" +
+        return "Vector2{" +
                 "x=" + x +
                 ", y=" + y +
                 '}';
@@ -50,9 +50,9 @@ public class Vector2 {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Vector2 vector3 = (Vector2) o;
-        return Float.compare(vector3.x, x) == 0 &&
-                Float.compare(vector3.y, y) == 0;
+        Vector2 vector2 = (Vector2) o;
+        return Float.compare(vector2.x, x) == 0 &&
+                Float.compare(vector2.y, y) == 0;
     }
 
     @Override
