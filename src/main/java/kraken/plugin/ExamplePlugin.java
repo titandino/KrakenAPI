@@ -91,6 +91,7 @@ public class ExamplePlugin extends AbstractPlugin {
             ImGui.label(" -> GlobalPos= " + self.getGlobalPosition());
             ImGui.label(" -> ScenePos= " + self.getScenePosition());
             ImGui.label(" -> Adrenaline= " + self.getStatusBarFill(ADRENALINE));
+            ImGui.label(" -> DirOff= " + self.getDirectionOffset());
 
             Entity interacting = self.getInteracting();
             if (interacting != null) {
@@ -103,9 +104,12 @@ public class ExamplePlugin extends AbstractPlugin {
             ImGui.label("Npc");
             ImGui.label(" -> Name= " + firstNpc.getName());
             ImGui.label(" -> Id= " + firstNpc.getId());
+            ImGui.label(" -> Animation= " + firstNpc.getAnimationId());
+            ImGui.label(" -> Moving= " + firstNpc.isMoving());
             ImGui.label(" -> Health= " + firstNpc.getHealth());
             ImGui.label(" -> GlobalPos= " + firstNpc.getGlobalPosition());
             ImGui.label(" -> ScenePos= " + firstNpc.getScenePosition());
+            ImGui.label(" -> DirOff= " + firstNpc.getDirectionOffset());
 
             Entity interacting = firstNpc.getInteracting();
             if (interacting != null) {
