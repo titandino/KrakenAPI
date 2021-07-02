@@ -1,5 +1,8 @@
 package kraken.plugin.api;
 
+/**
+ * A spirit in the game world.
+ */
 public class Spirit extends Entity {
 
     /**
