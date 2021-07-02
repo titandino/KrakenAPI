@@ -3,19 +3,12 @@ package kraken.plugin.api;
 /**
  * A non-playable-character within the game world.
  */
-public class Npc extends Entity {
+public class Npc extends Spirit {
 
     /**
      * Do not make instances of this.
      */
     Npc() { }
-
-    /**
-     * Retrieves this NPC's server index.
-     *
-     * @return This NPC's server index.
-     */
-    public native int getServerIndex();
 
     /**
      * Rerieves this NPC's id.
@@ -32,31 +25,10 @@ public class Npc extends Entity {
     public native int getHealth();
 
     /**
-     * Retrieves the server index of the entity being interacted with.
-     *
-     * @return The server index of the entity being interacted with.
-     */
-    public native int getInteractingIndex();
-
-    /**
      * Interacts with this NPC.
      */
     public void interact(int type) {
         Actions.entity(this, type);
-    }
-
-    /**
-     * Retrieves the entity being interacted with.
-     *
-     * @return The entity being interacted with.
-     */
-    public Entity getInteracting() {
-        int index = getInteractingIndex();
-        if (index == -1) {
-            return null;
-        }
-
-        return Entities.byServerIndex(index);
     }
 
     @Override
