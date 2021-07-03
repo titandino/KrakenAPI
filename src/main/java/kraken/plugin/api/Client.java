@@ -1,5 +1,8 @@
 package kraken.plugin.api;
 
+
+import java.nio.charset.StandardCharsets;
+
 /**
  * Provides access to various client state.
  */
@@ -143,5 +146,21 @@ public class Client {
         }
 
         return true;
+    }
+
+    /**
+     * Retrieves the path to the plugin directory.
+     *
+     * @return The path to the plugin directory.
+     */
+    public static native byte[] getPluginDirBinary();
+
+    /**
+     * Retrieves the path to the plugin directory.
+     *
+     * @return The path to the plugin directory.
+     */
+    public static String getPluginDir() {
+        return new String(getPluginDirBinary(), StandardCharsets.US_ASCII);
     }
 }
