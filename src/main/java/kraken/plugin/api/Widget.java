@@ -3,6 +3,8 @@ package kraken.plugin.api;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
+import static kraken.plugin.api.Text.filterSpecialChars;
+
 /**
  * A widget.
  */
@@ -53,7 +55,7 @@ public class Widget {
             return null;
         }
 
-        return new String(bin, StandardCharsets.US_ASCII);
+        return new String(filterSpecialChars(bin), StandardCharsets.US_ASCII);
     }
 
     /**
