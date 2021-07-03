@@ -149,6 +149,13 @@ public class Client {
     }
 
     /**
+     * Loads a new plugin into the client.
+     *
+     * @param entry The entry-point of the plugin to load.
+     */
+    public static native void loadNewPlugin(Class<?> entry);
+
+    /**
      * Retrieves the path to the plugin directory.
      *
      * @return The path to the plugin directory.
