@@ -1,5 +1,7 @@
 package kraken.plugin.api;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * Provides access to the local player's inventory.
  */
@@ -55,5 +57,18 @@ public class Inventory {
      */
     public static boolean contains(int id) {
         return count(id) > 0;
+    }
+
+    /**
+     * Iterates over each of the elements in the inventory.
+     *
+     * @param cb The callback to invoke with each element.
+     */
+    public static void forEach(ElementCallback<WidgetItem> cb) {
+        for (WidgetItem item : getItems()) {
+            if (item != null) {
+                cb.iterate(item);
+            }
+        }
     }
 }

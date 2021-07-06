@@ -18,7 +18,7 @@ public class Debug {
     /**
      * Prints a stack trace to the bot console.
      */
-    private static void printStackTrace(String cause, Throwable t) {
+    public static void printStackTrace(String cause, Throwable t) {
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         t.printStackTrace(new PrintStream(bos));
         String whole = new String(bos.toByteArray());
