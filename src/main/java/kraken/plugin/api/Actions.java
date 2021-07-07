@@ -43,6 +43,11 @@ public class Actions {
         Actions.menu(type, object.getId(), pos.getX(), pos.getY(), 1);
     }
 
+    public static void entity(SceneObject object, int type, int xOff, int yOff) {
+        Vector3i pos = object.getGlobalPosition();
+        Actions.menu(type, object.getId(), pos.getX() + xOff, pos.getY() + yOff, 1);
+    }
+
     public static void entity(Npc npc, int type) {
         Actions.menu(type, npc.getServerIndex(), 0, 0, 1);
     }
