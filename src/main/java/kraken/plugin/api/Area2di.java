@@ -28,6 +28,11 @@ public class Area2di {
                 v.getY() <= end.getY();
     }
 
+    public boolean contains(Entity entity) {
+        Vector3i g = entity.getGlobalPosition();
+        return contains(new Vector2i(g.getX(), g.getZ()));
+    }
+
     public Vector2i center() {
         return new Vector2i(
                 begin.getX() + ((end.getX() - begin.getX() / 2)),
