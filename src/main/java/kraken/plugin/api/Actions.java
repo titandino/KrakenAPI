@@ -24,12 +24,13 @@ public class Actions {
     public static final int MENU_EXECUTE_WIDGET = 14;
     public static final int MENU_EXECUTE_GROUND_ITEM = 15;
     public static final int MENU_EXECUTE_DIALOGUE = 16;
-    public static final int MENU_EXECUTE_SELECTABLE = 17;
-    public static final int MENU_EXECUTE_SELECT = 18;
+    public static final int MENU_EXECUTE_SELECTABLE_WIDGET = 17;
+    public static final int MENU_EXECUTE_SELECT_WIDGET_ITEM = 18;
     public static final int MENU_EXECUTE_OBJECT3 = 19;
     public static final int MENU_EXECUTE_OBJECT4 = 20;
     public static final int MENU_EXECUTE_OBJECT5 = 21;
     public static final int MENU_EXECUTE_OBJECT6 = 22;
+    public static final int MENU_EXECUTE_SELECT_GROUND_ITEM = 23;
 
     /**
      * Executes a synthetic menu action.
