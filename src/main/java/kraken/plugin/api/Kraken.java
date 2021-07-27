@@ -44,4 +44,17 @@ public class Kraken {
      */
     public static native Object protection(int id, Object[] args);
 
+    /**
+     * Toggles the auto login feature.
+     *
+     * @param enabled If auto login should be enabled or disabled.
+     */
+    public static native void toggleAutoLogin(boolean enabled);
+
+    /**
+     * Forces Kraken to take a break right now.
+     *
+     * @param ms The number of milliseconds to take a break for.
+     */
+    public static native void takeBreak(long ms);
 }
