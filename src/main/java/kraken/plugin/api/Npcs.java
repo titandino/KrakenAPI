@@ -16,6 +16,20 @@ public class Npcs {
     public static native Npc closest(Filter<Npc> filter);
 
     /**
+     * Iterates over each NPC.
+     *
+     * @param cb The callback for invoke for each NPC.
+     */
+    public static native void forEach(Callback<Npc> cb);
+
+    /**
+     * Retrieves all NPCs.
+     *
+     * @return All NPCs.
+     */
+    public static native Npc[] all();
+
+    /**
      * Finds a NPC by their server side index.
      *
      * @param index The server index to search for.

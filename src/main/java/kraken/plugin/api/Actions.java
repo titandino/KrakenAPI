@@ -24,12 +24,15 @@ public class Actions {
     public static final int MENU_EXECUTE_WIDGET = 14;
     public static final int MENU_EXECUTE_GROUND_ITEM = 15;
     public static final int MENU_EXECUTE_DIALOGUE = 16;
-    public static final int MENU_EXECUTE_SELECTABLE = 17;
-    public static final int MENU_EXECUTE_SELECT = 18;
+    public static final int MENU_EXECUTE_SELECTABLE_WIDGET = 17;
+    public static final int MENU_EXECUTE_SELECT_WIDGET_ITEM = 18;
     public static final int MENU_EXECUTE_OBJECT3 = 19;
     public static final int MENU_EXECUTE_OBJECT4 = 20;
     public static final int MENU_EXECUTE_OBJECT5 = 21;
     public static final int MENU_EXECUTE_OBJECT6 = 22;
+    public static final int MENU_EXECUTE_SELECT_GROUND_ITEM = 23;
+    public static final int MENU_EXECUTE_SELECT_NPC = 24;
+    public static final int MENU_EXECUTE_SELECT_OBJECT = 25;
 
     /**
      * Executes a synthetic menu action.
@@ -41,6 +44,11 @@ public class Actions {
     public static void entity(SceneObject object, int type) {
         Vector3i pos = object.getGlobalPosition();
         Actions.menu(type, object.getId(), pos.getX(), pos.getY(), 1);
+    }
+
+    public static void entity(SceneObject object, int type, int xOff, int yOff) {
+        Vector3i pos = object.getGlobalPosition();
+        Actions.menu(type, object.getId(), pos.getX() + xOff, pos.getY() + yOff, 1);
     }
 
     public static void entity(Npc npc, int type) {

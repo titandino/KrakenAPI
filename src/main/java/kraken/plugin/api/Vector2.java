@@ -31,11 +31,41 @@ public class Vector2 {
         this.y = y;
     }
 
+    public void add(float x, float y) {
+        this.x += x;
+        this.y += y;
+    }
+
+    public void sub(float x, float y) {
+        this.x -= x;
+        this.y -= y;
+    }
+
+    public void sub(Vector2 v) {
+        this.x -= v.getX();
+        this.y -= v.getY();
+    }
+
     /**
      * Calculates the distance between 2 vectors.
      */
     public float distance(Vector2 other) {
         return (float)Math.sqrt(Math.pow(other.getX() - x, 2) + Math.pow(other.getY() - y, 2));
+    }
+
+    /**
+     * Normalizes this vector.
+     */
+    public Vector2 normalize() {
+        double length = Math.sqrt(getX() * getX() + getY() * getY());
+        float x = 0.f;
+        float y = 0.f;
+        if (length != 0) {
+            x = (float) (getX() / length);
+            y = (float) (getY() / length);
+        }
+
+        return new Vector2(x, y);
     }
 
     @Override

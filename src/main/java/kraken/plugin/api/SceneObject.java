@@ -30,4 +30,13 @@ public class SceneObject extends Entity {
     public void interact(int type) {
         Actions.entity(this, type);
     }
+
+    /**
+     * Interacts with this object.
+     */
+    public void interact(int type, int xOff, int yOff) {
+        Actions.entity(this, type, xOff, yOff);
+    }
+
+
 }

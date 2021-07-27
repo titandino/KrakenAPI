@@ -23,6 +23,20 @@ public class Players {
     public static native Player closest(Filter<Player> filter);
 
     /**
+     * Iterates over each player.
+     *
+     * @param cb The callback for invoke for each player.
+     */
+    public static native void forEach(Callback<Player> cb);
+
+    /**
+     * Retrieves all players.
+     *
+     * @return All players.
+     */
+    public static native Player[] all();
+
+    /**
      * Finds a player by their server side index.
      *
      * @param index The server index to search for.

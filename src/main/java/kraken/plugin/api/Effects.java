@@ -13,4 +13,18 @@ public class Effects {
      */
     public static native Effect closest(Filter<Effect> filter);
 
+    /**
+     * Iterates over each effect.
+     *
+     * @param cb The callback for invoke for each effect.
+     */
+    public static native void forEach(Callback<Effect> cb);
+
+    /**
+     * Retrieves all effects.
+     *
+     * @return All effects.
+     */
+    public static native Effect[] all();
+
 }

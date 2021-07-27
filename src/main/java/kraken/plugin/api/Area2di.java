@@ -21,12 +21,38 @@ public class Area2di {
     /**
      * Determines if the provided vector is within this area.
      */
-    public boolean contains(Vector2i v)
-    {
+    public boolean contains(Vector2i v) {
         return v.getX() >= begin.getX() &&
                 v.getX() <= end.getX() &&
                 v.getY() >= begin.getY() &&
                 v.getY() <= end.getY();
+    }
+
+    public boolean contains(Entity entity) {
+        Vector3i g = entity.getGlobalPosition();
+        return contains(new Vector2i(g.getX(), g.getZ()));
+    }
+
+    public Vector2i center() {
+        return new Vector2i(
+                begin.getX() + ((end.getX() - begin.getX() / 2)),
+                begin.getY() + ((end.getY() - begin.getY() / 2)));
+    }
+
+    public Vector2i getBegin() {
+        return begin;
+    }
+
+    public void setBegin(Vector2i begin) {
+        this.begin = begin;
+    }
+
+    public Vector2i getEnd() {
+        return end;
+    }
+
+    public void setEnd(Vector2i end) {
+        this.end = end;
     }
 
     @Override

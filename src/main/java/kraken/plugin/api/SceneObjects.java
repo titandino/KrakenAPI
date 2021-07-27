@@ -13,4 +13,11 @@ public class SceneObjects {
      */
     public static native SceneObject closest(Filter<SceneObject> filter);
 
+    /**
+     * Iterates over each object.
+     *
+     * @param cb The callback for invoke for each object.
+     */
+    public static native void forEach(Callback<SceneObject> cb);
+
 }

@@ -147,27 +147,4 @@ public class Client {
 
         return true;
     }
-
-    /**
-     * Loads a new plugin into the client.
-     *
-     * @param entry The entry-point of the plugin to load.
-     */
-    public static native void loadNewPlugin(Class<?> entry);
-
-    /**
-     * Retrieves the path to the plugin directory.
-     *
-     * @return The path to the plugin directory.
-     */
-    public static native byte[] getPluginDirBinary();
-
-    /**
-     * Retrieves the path to the plugin directory.
-     *
-     * @return The path to the plugin directory.
-     */
-    public static String getPluginDir() {
-        return new String(getPluginDirBinary(), StandardCharsets.US_ASCII);
-    }
 }
