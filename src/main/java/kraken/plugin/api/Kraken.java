@@ -35,6 +35,8 @@ public class Kraken {
 
     /**
      * Performs a call into the protection subsystem. Documentation will not be provided for this system.
+     * This will be used internally, and in bundled plugins such as the SDN to provide increased protection
+     * for paid products which cannot be provided in pure Java.
      *
      * @param id The protection id.
      * @param args The protection arguments.
