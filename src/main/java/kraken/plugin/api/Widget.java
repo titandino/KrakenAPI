@@ -1,9 +1,9 @@
 package kraken.plugin.api;
 
+import static kraken.plugin.api.Text.filterSpecialChars;
+
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
-
-import static kraken.plugin.api.Text.filterSpecialChars;
 
 /**
  * A widget.

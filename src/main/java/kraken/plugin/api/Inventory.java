@@ -1,7 +1,5 @@
 package kraken.plugin.api;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 /**
  * Provides access to the local player's inventory.
  */
