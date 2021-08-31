@@ -1,6 +1,5 @@
 package kraken.plugin.api;
 
-import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -122,7 +121,7 @@ public class ManagedPlugin<K extends Enum<K>> extends Plugin {
 
     }
 
-    protected void onInventoryItemChangedManaged(WidgetItem item) {
+    protected void onInventoryItemChangedManaged(WidgetItem prev, WidgetItem next) {
 
     }
 
@@ -181,12 +180,12 @@ public class ManagedPlugin<K extends Enum<K>> extends Plugin {
     }
 
     @Override
-    public final void onInventoryItemChanged(WidgetItem item) {
+    public final void onInventoryItemChanged(WidgetItem prev, WidgetItem next) {
         if (waitingOnCache()) {
             return;
         }
 
-        onInventoryItemChangedManaged(item);
+        onInventoryItemChangedManaged(prev, next);
     }
 
     public static interface PluginAction {

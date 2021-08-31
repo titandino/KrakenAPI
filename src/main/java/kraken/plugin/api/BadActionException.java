@@ -2,7 +2,9 @@ package kraken.plugin.api;
 
 public class BadActionException extends KrakenRuntimeException {
 
-    public BadActionException() {
+	private static final long serialVersionUID = 311378448467085427L;
+
+	public BadActionException() {
     }
 
     public BadActionException(String message) {

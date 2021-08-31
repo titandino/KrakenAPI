@@ -2,7 +2,9 @@ package kraken.plugin.api;
 
 public class KrakenRuntimeException extends RuntimeException {
 
-    public KrakenRuntimeException() {
+	private static final long serialVersionUID = 5078457635731422050L;
+
+	public KrakenRuntimeException() {
     }
 
     public KrakenRuntimeException(String message) {

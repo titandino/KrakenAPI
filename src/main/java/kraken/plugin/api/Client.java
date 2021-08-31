@@ -1,8 +1,5 @@
 package kraken.plugin.api;
 
-
-import java.nio.charset.StandardCharsets;
-
 /**
  * Provides access to various client state.
  */

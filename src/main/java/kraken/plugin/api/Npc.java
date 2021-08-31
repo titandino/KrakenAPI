@@ -1,6 +1,10 @@
 package kraken.plugin.api;
 
-import static kraken.plugin.api.Actions.*;
+import static kraken.plugin.api.Actions.MENU_EXECUTE_NPC1;
+import static kraken.plugin.api.Actions.MENU_EXECUTE_NPC2;
+import static kraken.plugin.api.Actions.MENU_EXECUTE_NPC3;
+import static kraken.plugin.api.Actions.MENU_EXECUTE_NPC4;
+import static kraken.plugin.api.Actions.MENU_EXECUTE_NPC5;
 import static kraken.plugin.api.Actions.MENU_EXECUTE_NPC6;
 
 /**

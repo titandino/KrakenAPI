@@ -1,6 +1,12 @@
 package kraken.plugin.api;
 
-import static kraken.plugin.api.Actions.*;
+import static kraken.plugin.api.Actions.MENU_EXECUTE_OBJECT1;
+import static kraken.plugin.api.Actions.MENU_EXECUTE_OBJECT2;
+import static kraken.plugin.api.Actions.MENU_EXECUTE_OBJECT3;
+import static kraken.plugin.api.Actions.MENU_EXECUTE_OBJECT4;
+import static kraken.plugin.api.Actions.MENU_EXECUTE_OBJECT5;
+import static kraken.plugin.api.Actions.MENU_EXECUTE_OBJECT6;
+import static kraken.plugin.api.Actions.entity;
 
 /**
  * An object within the game world.
