@@ -11,6 +11,9 @@ public class WidgetGroup {
 
     private long internal1;
 
+    private int id;
+    private Widget[] widgets;
+
     /**
      * Do not make instances of this.
      */
@@ -21,14 +24,18 @@ public class WidgetGroup {
      *
      * @return The id of this group.
      */
-    public native int getId();
+    public int getId() {
+        return id;
+    }
 
     /**
      * Retrieves all widgets in this group.
      *
      * @return All widgets in this group.
      */
-    public native Widget[] getWidgets();
+    public Widget[] getWidgets() {
+        return widgets;
+    }
 
     @Override
     public String toString() {

@@ -28,9 +28,16 @@ public class Area2di {
                 v.getY() <= end.getY();
     }
 
+    /**
+     * Determines if the provided vector is within this area.
+     */
+    public boolean contains(Vector3i v) {
+        return contains(new Vector2i(v));
+    }
+
     public boolean contains(Entity entity) {
         Vector3i g = entity.getGlobalPosition();
-        return contains(new Vector2i(g.getX(), g.getZ()));
+        return contains(new Vector2i(g.getX(), g.getY()));
     }
 
     public Vector2i center() {

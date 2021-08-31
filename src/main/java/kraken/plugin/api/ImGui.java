@@ -3,7 +3,7 @@ package kraken.plugin.api;
 /**
  * Provides bindings to imgui.
  */
-public class ImGui {
+public final class ImGui {
 
     private ImGui() { }
 
@@ -21,6 +21,11 @@ public class ImGui {
      * Draws a label in the current UI context. This label will be positioned automatically.
      */
     public static native void label(String label);
+
+    /**
+     * Draws a combo box in the current UI context. This combo box will be positioned automatically.
+     */
+    public static native int combo(String label, String[] options, int selected);
 
     /**
      * Draws a checkbox in the current UI context. This checkbox will be positioned automatically.
@@ -61,4 +66,24 @@ public class ImGui {
      * Draws a 4-point polygon onto the screen.
      */
     public static native void freePoly4(Vector2i a, Vector2i b, Vector2i c, Vector2i d, int color);
+
+    /**
+     * Begins rendering of a tab bar.
+     */
+    public static native boolean beginTabBar(String name);
+
+    /**
+     * Ends rendering of a tab bar.
+     */
+    public static native void endTabBar();
+
+    /**
+     * Begins rendering of a tab bar.
+     */
+    public static native boolean beginTabItem(String name);
+
+    /**
+     * Ends rendering of a tab bar.
+     */
+    public static native void endTabItem();
 }

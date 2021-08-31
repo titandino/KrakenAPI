@@ -11,6 +11,9 @@ public class GroundItem extends Entity {
 
     private int internal10;
 
+    private int id;
+    private int amount;
+
     /**
      * Do not make instances of this.
      */
@@ -21,14 +24,27 @@ public class GroundItem extends Entity {
      *
      * @return The id of the item stack.
      */
-    public native int getId();
+    public int getId() {
+        return id;
+    }
 
     /**
      * Retrieves the amount of item in the item stack.
      *
      * @return The amount of item in the item stack.
      */
-    public native int getAmount();
+    public int getAmount() {
+        return amount;
+    }
+
+    /**
+     * Retrieves the name of this item.
+     *
+     * @return The name of this item.
+     */
+    public String getName() {
+        return Cache.getItem(id).getName();
+    }
 
     @Override
     public boolean equals(Object o) {

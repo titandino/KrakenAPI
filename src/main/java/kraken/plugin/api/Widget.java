@@ -1,9 +1,9 @@
 package kraken.plugin.api;
 
-import static kraken.plugin.api.Text.filterSpecialChars;
-
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
+
+import static kraken.plugin.api.Text.filterSpecialChars;
 
 /**
  * A widget.
@@ -18,6 +18,13 @@ public class Widget {
 
     private long internal1;
 
+    private int type;
+    private Widget[] children;
+    private byte[] textBinary;
+    private Item item;
+    private Vector2i position;
+    private Vector2i size;
+
     /**
      * Do not make instances of this.
      */
@@ -28,21 +35,27 @@ public class Widget {
      *
      * @return The type of this widget.
      */
-    public native int getType();
+    public int getType() {
+        return type;
+    }
 
     /**
      * Retrieves the children in this widget.
      *
      * @return The children in this widget.
      */
-    public native Widget[] getChildren();
+    public Widget[] getChildren() {
+        return children;
+    }
 
     /**
      * Retrieves the text being stored in this widget.
      *
      * @return The text being stored in this widget, or NULL if the widget has no text.
      */
-    public native byte[] getTextBinary();
+    public byte[] getTextBinary() {
+        return textBinary;
+    }
 
     /**
      * Retrieves the text being stored in this widget.
@@ -63,21 +76,27 @@ public class Widget {
      *
      * @return The item being stored in this widget, or NULL if the widget has no item.
      */
-    public native Item getItem();
+    public Item getItem() {
+        return item;
+    }
 
     /**
      * Retrieves the position of this widget on the screen. May not be valid for all widgets.
      *
      * @return The position of this widget.
      */
-    public native Vector2i getPosition();
+    public Vector2i getPosition() {
+        return position;
+    }
 
     /**
      * Retrieves the size of this widget on the screen. May not be valid for all widgets.
      *
      * @return The size of this widget.
      */
-    public native Vector2i getSize();
+    public Vector2i getSize() {
+        return size;
+    }
 
     @Override
     public String toString() {

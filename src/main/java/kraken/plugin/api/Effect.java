@@ -10,11 +10,15 @@ public class Effect extends Entity {
      */
     private Effect() { }
 
+    private int id;
+
     /**
      * Retrieves the id of the effect.
      *
      * @return The id of the effect.
      */
-    public native int getId();
+    public int getId() {
+        return id;
+    }
 
 }

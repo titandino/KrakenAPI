@@ -3,7 +3,7 @@ package kraken.plugin.api;
 /**
  * A provider of entities.
  */
-public class Entities {
+public final class Entities {
 
     private Entities() { }
 

@@ -5,7 +5,9 @@ import java.nio.charset.StandardCharsets;
 /**
  * Provides access to kraken itself.
  */
-public class Kraken {
+public final class Kraken {
+
+    private Kraken() { }
 
     // these will be randomized, do not use
     public static final int PROTECTION_ID_DECRYPT_INT = 8851721;
@@ -57,4 +59,17 @@ public class Kraken {
      * @param ms The number of milliseconds to take a break for.
      */
     public static native void takeBreak(long ms);
+
+    /**
+     * Retrieves the number of times the client has been restarted in this session (due to crashes, etc.)
+     * This can be useful for determining if you should initialize persistent data in your plugin.
+     */
+    public static native int getRestartCount();
+
+    /**
+     * Determines if this is a new session. Useful for initializing variables in plugins related to runtime, experience, etc.
+     */
+    public static boolean isNewSession() {
+        return getRestartCount() == 0;
+    }
 }

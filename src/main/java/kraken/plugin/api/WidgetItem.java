@@ -2,7 +2,7 @@ package kraken.plugin.api;
 
 import java.util.Objects;
 
-public class WidgetItem extends Item{
+public class WidgetItem extends Item {
 
     private int slot;
 

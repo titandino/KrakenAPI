@@ -17,4 +17,11 @@ public class Move {
      */
     public static native void to(Vector2i tile);
 
+    /**
+     * Traverses the world using a web.
+     *
+     * @param tile The tile to traverse to.
+     * @param context The traversal context.
+     */
+    public static native void traverse(Vector3i tile, TraverseContext context);
 }

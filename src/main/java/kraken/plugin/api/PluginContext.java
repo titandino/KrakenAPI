@@ -25,4 +25,17 @@ public class PluginContext {
      */
     public native void setSdkVersion(int version);
 
+    /**
+     * Retrieves the persistent data for this plugin. This data will be saved to disk.
+     * 
+     * @return The persistent data for this plugin.
+     */
+    public native byte[] getPersistentData();
+
+    /**
+     * Stores new persistent data for this plugin.
+     *
+     * @param data The new persistent data to store.
+     */
+    public native void setPersistentData(byte[] data);
 }

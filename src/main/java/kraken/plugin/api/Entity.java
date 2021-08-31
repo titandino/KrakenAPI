@@ -1,9 +1,9 @@
 package kraken.plugin.api;
 
-import static kraken.plugin.api.Text.filterSpecialChars;
-
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
+
+import static kraken.plugin.api.Text.filterSpecialChars;
 
 /**
  * A character.
@@ -16,6 +16,10 @@ public class Entity {
     private int internal2;
     private long internal3;
 
+    private byte[] nameBinary;
+    private Vector3 scenePosition;
+    private Vector3i globalPosition;
+
     /**
      * Do not make instances of this.
      */
@@ -26,7 +30,9 @@ public class Entity {
      *
      * @return The name of this entity.
      */
-    private native byte[] getNameBinary();
+    private byte[] getNameBinary() {
+        return nameBinary;
+    }
 
     /**
      * Retrieves the name of this entity.
@@ -47,14 +53,18 @@ public class Entity {
      *
      * @return This character's position within the 3d scene.
      */
-    public native Vector3 getScenePosition();
+    public Vector3 getScenePosition() {
+        return scenePosition;
+    }
 
     /**
      * Retrieves this character's global position within the world.
      *
      * @return This character's global position within the world.
      */
-    public native Vector3i getGlobalPosition();
+    public Vector3i getGlobalPosition() {
+        return globalPosition;
+    }
 
     @Override
     public boolean equals(Object o) {

@@ -3,7 +3,9 @@ package kraken.plugin.api;
 /**
  * A provider for effects.
  */
-public class Effects {
+public final class Effects {
+
+    private Effects() { }
 
     /**
      * Finds the closest effect matching the provided filter.
@@ -18,7 +20,7 @@ public class Effects {
      *
      * @param cb The callback for invoke for each effect.
      */
-    public static native void forEach(Callback<Effect> cb);
+    public static native void forEach(Action1<Effect> cb);
 
     /**
      * Retrieves all effects.

@@ -3,7 +3,9 @@ package kraken.plugin.api;
 /**
  * A provider of ground items.
  */
-public class GroundItems {
+public final class GroundItems {
+
+    private GroundItems() { }
 
     /**
      * Finds the closest ground item matching the provided filter.

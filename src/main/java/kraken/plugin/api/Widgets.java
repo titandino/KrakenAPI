@@ -3,7 +3,7 @@ package kraken.plugin.api;
 /**
  * A provider of widgets.
  */
-public class Widgets {
+public final class Widgets {
 
     private Widgets() { }
 

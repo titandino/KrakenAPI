@@ -3,7 +3,7 @@ package kraken.plugin.api;
 /**
  * A provider of players.
  */
-public class Players {
+public final class Players {
 
     private Players() { }
 
@@ -27,7 +27,7 @@ public class Players {
      *
      * @param cb The callback for invoke for each player.
      */
-    public static native void forEach(Callback<Player> cb);
+    public static native void forEach(Action1<Player> cb);
 
     /**
      * Retrieves all players.

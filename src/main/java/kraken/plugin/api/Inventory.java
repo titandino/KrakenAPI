@@ -3,7 +3,7 @@ package kraken.plugin.api;
 /**
  * Provides access to the local player's inventory.
  */
-public class Inventory {
+public final class Inventory {
 
     private Inventory() { }
 
@@ -62,10 +62,10 @@ public class Inventory {
      *
      * @param cb The callback to invoke with each element.
      */
-    public static void forEach(ElementCallback<WidgetItem> cb) {
+    public static void forEach(Action1<WidgetItem> cb) {
         for (WidgetItem item : getItems()) {
             if (item != null) {
-                cb.iterate(item);
+                cb.call(item);
             }
         }
     }

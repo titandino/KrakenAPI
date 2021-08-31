@@ -3,7 +3,7 @@ package kraken.plugin.api;
 /**
  * A provider of NPCs.
  */
-public class Npcs {
+public final class Npcs {
 
     private Npcs() { }
 
@@ -20,7 +20,7 @@ public class Npcs {
      *
      * @param cb The callback for invoke for each NPC.
      */
-    public static native void forEach(Callback<Npc> cb);
+    public static native void forEach(Action1<Npc> cb);
 
     /**
      * Retrieves all NPCs.

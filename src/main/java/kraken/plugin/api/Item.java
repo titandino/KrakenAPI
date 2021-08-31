@@ -18,6 +18,10 @@ public class Item {
         this.amount = amount;
     }
 
+    public Item(int id) {
+        this(id, 1);
+    }
+
     public int getId() {
         return id;
     }
@@ -32,6 +36,24 @@ public class Item {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    /**
+     * Retrieves the name of this item.
+     *
+     * @return The name of this item.
+     */
+    public String getName() {
+        return Cache.getItem(id).getName();
+    }
+
+    /**
+     * Retrieves the names of all options on this item.
+     *
+     * @return The names of all options on this item.
+     */
+    public String[] getOptionNames() {
+        return Cache.getItem(id).getOptionNames();
     }
 
     @Override

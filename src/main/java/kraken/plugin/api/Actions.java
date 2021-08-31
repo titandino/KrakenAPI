@@ -3,15 +3,16 @@ package kraken.plugin.api;
 /**
  * A provider of actions.
  */
-public class Actions {
+public final class Actions {
 
     private Actions() { }
 
+    // TODO FIXME re-order all of these one day
     public static final int MENU_EXECUTE_WALK = 0;
-    public static final int MENU_EXECUTE_PLAYER_REQ_ASSIST = 1;
-    public static final int MENU_EXECUTE_PLAYER_EXAMINE = 2;
-    public static final int MENU_EXECUTE_PLAYER = 3;
-    public static final int MENU_EXECUTE_PLAYER_TRADE = 4;
+    public static final int MENU_EXECUTE_PLAYER1 = 1;
+    public static final int MENU_EXECUTE_PLAYER2 = 2;
+    public static final int MENU_EXECUTE_PLAYER3 = 3;
+    public static final int MENU_EXECUTE_PLAYER4 = 4;
     public static final int MENU_EXECUTE_NPC1 = 5;
     public static final int MENU_EXECUTE_NPC2 = 6;
     public static final int MENU_EXECUTE_NPC3 = 7;
@@ -33,6 +34,49 @@ public class Actions {
     public static final int MENU_EXECUTE_SELECT_GROUND_ITEM = 23;
     public static final int MENU_EXECUTE_SELECT_NPC = 24;
     public static final int MENU_EXECUTE_SELECT_OBJECT = 25;
+    public static final int MENU_EXECUTE_PLAYER5 = 26;
+    public static final int MENU_EXECUTE_PLAYER6 = 27;
+    public static final int MENU_EXECUTE_SELECT_PLAYER = 28;
+    public static final int MENU_EXECUTE_PLAYER7 = 29;
+    public static final int MENU_EXECUTE_PLAYER8 = 30;
+
+    /**
+     * All actions that are valid on NPCs.
+     */
+    private static final int[] VALID_NPC_ACTIONS = {
+            MENU_EXECUTE_NPC1,
+            MENU_EXECUTE_NPC2,
+            MENU_EXECUTE_NPC3,
+            MENU_EXECUTE_NPC4,
+            MENU_EXECUTE_NPC5,
+            MENU_EXECUTE_NPC6,
+    };
+
+    /**
+     * All actions that are valid on objects.
+     */
+    private static final int[] VALID_OBJECT_ACTIONS = {
+            MENU_EXECUTE_OBJECT1,
+            MENU_EXECUTE_OBJECT2,
+            MENU_EXECUTE_OBJECT3,
+            MENU_EXECUTE_OBJECT4,
+            MENU_EXECUTE_OBJECT5,
+            MENU_EXECUTE_OBJECT6,
+    };
+
+    /**
+     * All actions that are valid on players.
+     */
+    private static final int[] VALID_PLAYER_ACTIONS = {
+            MENU_EXECUTE_PLAYER1,
+            MENU_EXECUTE_PLAYER2,
+            MENU_EXECUTE_PLAYER3,
+            MENU_EXECUTE_PLAYER4,
+            MENU_EXECUTE_PLAYER5,
+            MENU_EXECUTE_PLAYER6,
+            MENU_EXECUTE_PLAYER7,
+            MENU_EXECUTE_PLAYER8
+    };
 
     /**
      * Executes a synthetic menu action.
@@ -41,17 +85,32 @@ public class Actions {
 
     // Entity utilities.
 
-    public static void entity(SceneObject object, int type) {
-        Vector3i pos = object.getGlobalPosition();
-        Actions.menu(type, object.getId(), pos.getX(), pos.getY(), 1);
-    }
-
     public static void entity(SceneObject object, int type, int xOff, int yOff) {
+        if (!Array.contains(VALID_OBJECT_ACTIONS, type)) {
+            throw new BadActionException("Bad object action type");
+        }
+
         Vector3i pos = object.getGlobalPosition();
         Actions.menu(type, object.getId(), pos.getX() + xOff, pos.getY() + yOff, 1);
     }
 
-    public static void entity(Npc npc, int type) {
-        Actions.menu(type, npc.getServerIndex(), 0, 0, 1);
+    public static void entity(SceneObject object, int type) {
+        entity(object, type, 0, 0);
+    }
+
+    public static void entity(Spirit spirit, int type) {
+        if (spirit instanceof Player) {
+            if (!Array.contains(VALID_PLAYER_ACTIONS, type)) {
+                throw new BadActionException("Bad player action type");
+            }
+        } else if (spirit instanceof Npc) {
+            if (!Array.contains(VALID_NPC_ACTIONS, type)) {
+                throw new BadActionException("Bad NPC action type");
+            }
+        } else {
+            throw new BadActionException("Bad entity type");
+        }
+
+        Actions.menu(type, spirit.getServerIndex(), 0, 0, 1);
     }
 }

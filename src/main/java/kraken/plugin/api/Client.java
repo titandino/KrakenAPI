@@ -1,5 +1,8 @@
 package kraken.plugin.api;
 
+
+import java.nio.charset.StandardCharsets;
+
 /**
  * Provides access to various client state.
  */
@@ -143,5 +146,12 @@ public class Client {
         }
 
         return true;
+    }
+
+    /**
+     * Logs out by clicking the logout button.
+     */
+    public static void logout() {
+        Actions.menu(Actions.MENU_EXECUTE_WIDGET, 1, -1, 93913158, 1631780865);
     }
 }
